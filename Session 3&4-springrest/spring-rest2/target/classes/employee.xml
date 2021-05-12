@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employee1" class="com.cognizant.springrest.Employee">
+		<property name="id" value="1001"></property>
+		<property name="name" value="Name1"></property>
+		<property name="salary" value="10000"></property>
+		<property name="department" ref="department1"></property>
+	</bean>
+	
+	<bean id="employee2" class="com.cognizant.springrest.Employee">
+		<property name="id" value="1002"></property>
+		<property name="name" value="Name2"></property>
+		<property name="salary" value="10000"></property>
+		<property name="department" ref="department2"></property>
+	</bean>
+	
+	<bean id="employee3" class="com.cognizant.springrest.Employee">
+		<property name="id" value="1003"></property>
+		<property name="name" value="Name3"></property>
+		<property name="salary" value="10000"></property>
+		<property name="department" ref="department3"></property>
+	</bean>
+	
+	<bean id="department1" class="com.cognizant.springrest.Department">
+		<property name="id" value="101"></property>
+		<property name="name" value="Development"></property>
+	</bean>
+	
+	<bean id="department2" class="com.cognizant.springrest.Department">
+		<property name="id" value="102"></property>
+		<property name="name" value="Testing"></property>
+	</bean>
+	
+	<bean id="department3" class="com.cognizant.springrest.Department">
+		<property name="id" value="103"></property>
+		<property name="name" value="HR"></property>
+	</bean>
+	
+	<bean id="employeeList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="employee1"></ref>
+				<ref bean="employee2"></ref>
+				<ref bean="employee3"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="departmentList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="department1"></ref>
+				<ref bean="department2"></ref>
+				<ref bean="department3"></ref>
+            </list>
+		</constructor-arg>
+	</bean>	
+	
+
+</beans>
